@@ -352,3 +352,4 @@ D:\Projekty\takie tam\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\
 D:\Projekty\takie tam\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\RestaurantSystem.dll
 D:\Projekty\takie tam\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\RestaurantSystem.pdb
 D:\Projekty\takie tam\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\RestaurantSystem.genruntimeconfig.cache
+D:\Projekty\takie tam\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Menu.cshtml.g.cs
