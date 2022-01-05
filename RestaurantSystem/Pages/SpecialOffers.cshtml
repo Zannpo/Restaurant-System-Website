@@ -1,4 +1,12 @@
 ﻿@page
 @model RestaurantSystem.Pages.SpecialOffersModel
 @{
+    ViewData["Title"] = "Promocje";
 }
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>Nasze aktualne promocje: </p>
+</div>
+@Model.Id

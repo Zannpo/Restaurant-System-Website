@@ -1,4 +1,22 @@
 ﻿@page
 @model RestaurantSystem.Pages.OrderModel
 @{
+    ViewData["Title"] = "Zamów";
 }
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>Tutaj będzie można zamówić</p>
+</div>
+<form method="post">
+    <input type="text" asp-for="Customer.name" placeholder="Imię" />
+    <input type="text" asp-for="Customer.surname" placeholder="Nazwisko" />
+    <input type="text" asp-for="Customer.phoneNumber" placeholder="Numer telefonu" />
+    <input type="text" asp-for="Customer.email" placeholder="Adres email" />
+    <input type="text" asp-for="MenuPosition.courseName" placeholder="Nazwa Dania" />
+    <input type="text" asp-for="Customer.comment" placeholder="Uwagi" />
+    <button type="submit">Zamów</button>
+</form>
+
+<p>Dziękujemy za zainteresowanie naszymi usługami @Model.CustomerName</p>

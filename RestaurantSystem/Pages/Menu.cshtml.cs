@@ -4,13 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace RestaurantSystem.Pages
 {
     public class MenuModel : PageModel
     {
+        private readonly ILogger<MenuModel> _logger;
+
+        public MenuModel(ILogger<MenuModel> logger)
+        {
+            _logger = logger;
+        }
+
         public void OnGet()
         {
-        }
+            //Displays the form
+
+        }      
+
     }
 }
