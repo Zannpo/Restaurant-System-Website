@@ -26,11 +26,11 @@ namespace RestaurantSystem.Pages
             //Displays the form
             if (string.IsNullOrEmpty(Customer.name))
             {
-                CustomerName = "Kliencie";
+                CustomerName = "";
             }
             else
-            {                
-                //CustomerName = Customer.name;   
+            {        
+                // Nothing to do here
             }
 
         }

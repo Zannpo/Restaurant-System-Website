@@ -1,22 +1,28 @@
 ﻿@page
 @model RestaurantSystem.Pages.OrderModel
 @{
-    ViewData["Title"] = "Zamów";
+    ViewData["Title"] = "Złóż zamówienie";
 }
 
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
 
-    <p>Tutaj będzie można zamówić</p>
+    <form method="post">
+        <input type="text" asp-for="Customer.name" placeholder="Imię" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="Customer.surname" placeholder="Nazwisko" input-md" required="" /><br />
+        <br />
+        <input type="tel" asp-for="Customer.phoneNumber" placeholder="Numer telefonu" input-md" required="" /><br />
+        <br />
+        <input type="email" asp-for="Customer.email" placeholder="Adres email" input-md" required="" /><br />
+        <br />
+        <input type="email" asp-for="Customer.address" placeholder="Adres dostawy" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="MenuPosition.courseName" placeholder="Nazwa Dania" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="Customer.comment" placeholder="Uwagi" /><br />
+        <br />
+        <button type="submit">Zamów</button>
+    </form>
 </div>
-<form method="post">
-    <input type="text" asp-for="Customer.name" placeholder="Imię" />
-    <input type="text" asp-for="Customer.surname" placeholder="Nazwisko" />
-    <input type="text" asp-for="Customer.phoneNumber" placeholder="Numer telefonu" />
-    <input type="text" asp-for="Customer.email" placeholder="Adres email" />
-    <input type="text" asp-for="MenuPosition.courseName" placeholder="Nazwa Dania" />
-    <input type="text" asp-for="Customer.comment" placeholder="Uwagi" />
-    <button type="submit">Zamów</button>
-</form>
-
-<p>Dziękujemy za zainteresowanie naszymi usługami @Model.CustomerName</p>
+<p> <b> Dziękujemy za zainteresowanie naszymi usługami <i> @Model.CustomerName </i></b> !</p>
