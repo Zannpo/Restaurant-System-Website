@@ -16,17 +16,17 @@
         <br />
         <input type="email" asp-for="Customer.email" placeholder="Adres email" input-md" required="" /><br />
         <br />
-        <input type="email" asp-for="Customer.address" placeholder="Adres dostawy" input-md" required="" /><br />
+        <input type="text" asp-for="Customer.address" placeholder="Adres dostawy" input-md" required="" /><br />
         <br />
         <input type="text" asp-for="MenuPosition.courseName" placeholder="Nazwa Dania" input-md" required="" /><br />
         <br />
         <input type="text" asp-for="Customer.comment" placeholder="Uwagi" /><br />
         <br />
-        <button type="submit">Zamów</button>
+        <button type="submit">Złóż zamówienie</button>
     </form>
 </div>
 
-@if (Model.Visible == true)
+@if (Model.Visible)
 {
     <p> <b> Dziękujemy za zainteresowanie naszymi usługami <i> @Model.CustomerName </i></b> !</p>
 }
