@@ -15,7 +15,18 @@ a {
 
 a:hover
 {
+    color:black;
     font-weight:bold;
+}
+
+a:active
+{
+    color:black;
+}
+
+a:visited
+{
+    color: darkslategrey;
 }
 
 .navbar-custom
@@ -80,9 +91,6 @@ body {
     background-color:burlywood;
 }
 
-#main {
-    background-color:burlywood;
-}
 
 .footer {
   position: absolute;
