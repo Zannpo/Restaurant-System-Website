@@ -20,6 +20,8 @@ namespace RestaurantSystem.Pages
                 
         public String CustomerName;
 
+        public Boolean Visible = true;
+
         public void OnGet()
         {
             
@@ -27,9 +29,11 @@ namespace RestaurantSystem.Pages
             if (string.IsNullOrEmpty(Customer.name))
             {
                 CustomerName = "";
+                Visible = false;
             }
             else
-            {        
+            {
+                Visible = true;
                 // Nothing to do here
             }
 

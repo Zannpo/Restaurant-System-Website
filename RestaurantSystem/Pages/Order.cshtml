@@ -25,4 +25,8 @@
         <button type="submit">Zamów</button>
     </form>
 </div>
-<p> <b> Dziękujemy za zainteresowanie naszymi usługami <i> @Model.CustomerName </i></b> !</p>
+
+@if (Model.Visible == true)
+{
+    <p> <b> Dziękujemy za zainteresowanie naszymi usługami <i> @Model.CustomerName </i></b> !</p>
+}
