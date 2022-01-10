@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light navbar-custom border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Ramenik</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,9 +30,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Order">Zamów</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +43,9 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Ramenik - RestaurantSystem - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div id="footer">
+          <a> 2022 - Ramenik - Restaurant System - </a> <a asp-area="" asp-page="/Privacy">Polityka prywatności</a>
+             </div>
         </div>
     </footer>
 
