@@ -11,11 +11,14 @@
     <div class="card-columns">
         @foreach (var dish in Model.AllPositions)
         {
-            <div class="card">
-                <div class="card-img" style="background-image: url('@dish.CourseImage');"></div>
-                <div class="card-body">
-                    @dish.CourseName
-                </div>
+            <div class="card">                
+                <div class="card-img" style="background-image: url(@Url.Content(dish.CourseImage))" );>  
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="card-body">
+                            @dish.CourseName
+                        </div>
+                    </div>                
+               </div>
             </div>
         }
     </div>
