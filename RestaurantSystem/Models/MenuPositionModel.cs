@@ -8,9 +8,10 @@ namespace RestaurantSystem.Models
     public class MenuPositionModel
     {
         public int idCourse { get; set; }
-        public int idCourseType { get; set; }
+        public string courseType { get; set; }
         public string courseName { get; set; }
         public string ingredients { get; set; }
         public decimal courseCost { get; set; }
+        public string courseImage { get; set; }
     }
 }
