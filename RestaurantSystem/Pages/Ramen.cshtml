@@ -8,6 +8,7 @@
     <h1>@ViewData["Title"]</h1>
 
     <p>Nasze rameny</p>
+    <div id="photo">
     <div class="card-columns">
         @foreach (var dish in Model.AllPositions)
         {
@@ -22,4 +23,5 @@
             </div>
         }
     </div>
+   </div>
 </div>
