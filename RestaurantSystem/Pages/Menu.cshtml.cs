@@ -4,24 +4,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using RestaurantSystem.Models;
 
 namespace RestaurantSystem.Pages
 {
     public class MenuModel : PageModel
     {
-        private readonly ILogger<MenuModel> _logger;
 
-        public MenuModel(ILogger<MenuModel> logger)
+        [BindProperty]
+        public MenuPosition MenuPosition { get; set; }
+
+        public List<MenuPosition> AllPositions = new List<MenuPosition>();
+
+        private readonly RamenikDBContext _ramenikDBContext;
+        public MenuModel(RamenikDBContext ramenikDBContext)
         {
-            _logger = logger;
+            _ramenikDBContext = ramenikDBContext;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            //Displays the form
-
-        }      
+            AllPositions = await _ramenikDBContext.MenuPositions.OrderBy(position => position.IdCourse).ToListAsync();
+        }
 
     }
 }

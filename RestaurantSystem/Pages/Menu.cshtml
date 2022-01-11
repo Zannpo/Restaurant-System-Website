@@ -7,17 +7,41 @@
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
 
-    <p>Tutaj będzie menu</p>
-    @*  <div class="card-columns">
-            @foreach (var in Model.Dishes)
-            {
-                <div class="card">
-                    <div class="card-img" style="background-image: url('@Model.Image');"></div>
-                    <div class="card-body">
-                        @Model.dishName
-                    </div>
+    <p>Nasze menu</p>
+    <div class="card-columns">
+        @foreach (var dish in Model.AllPositions)
+        {
+            <div class="card">
+                <div class="card-img" style="background-image: url('@dish.CourseImage');"></div>
+                <div class="card-body">
+                    @dish.CourseName
                 </div>
-            }
-        </div>  *@
+            </div>
+        }
+    </div>
+</div>
 
+
+
+
+<div>
+    <table class="table table-custom table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var offer in Model.AllPositions)
+            {
+                <tr>
+                    <th scope="row">@offer.IdCourse</th>
+                    <td>@offer.CourseName</td>
+                    <td>@offer.CourseCost</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
