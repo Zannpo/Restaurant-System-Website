@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projekty\\takie tam\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj": {}
+    "C:\\Users\\Żaneta\\Desktop\\ramenik\\Restaurant-System-Website\\RestaurantSystem\\RestaurantSystem.csproj": {}
   },
   "projects": {
-    "D:\\Projekty\\takie tam\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj": {
+    "C:\\Users\\Żaneta\\Desktop\\ramenik\\Restaurant-System-Website\\RestaurantSystem\\RestaurantSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty\\takie tam\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Żaneta\\Desktop\\ramenik\\Restaurant-System-Website\\RestaurantSystem\\RestaurantSystem.csproj",
         "projectName": "RestaurantSystem",
-        "projectPath": "D:\\Projekty\\takie tam\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj",
+        "projectPath": "C:\\Users\\Żaneta\\Desktop\\ramenik\\Restaurant-System-Website\\RestaurantSystem\\RestaurantSystem.csproj",
         "packagesPath": "C:\\Users\\Żaneta\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty\\takie tam\\RestaurantSystem\\RestaurantSystem\\obj\\",
+        "outputPath": "C:\\Users\\Żaneta\\Desktop\\ramenik\\Restaurant-System-Website\\RestaurantSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,10 +44,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.12, )"
-            },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.20, )"
@@ -64,7 +60,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[3.1.21, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer.Design": {
               "target": "Package",

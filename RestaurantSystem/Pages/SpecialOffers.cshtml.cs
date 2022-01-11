@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,20 @@ namespace RestaurantSystem.Pages
         [BindProperty(SupportsGet = true)] //BindProperty makes it writable
         public int Id { get; set; }
 
-        public void OnGet()
+        public List<SpecialOffer> AllOffers = new List<SpecialOffer>();
+
+        private readonly RamenikDBContext _ramenikDBContext;
+        public SpecialOffersModel(RamenikDBContext ramenikDBContext)
+        {
+            _ramenikDBContext = ramenikDBContext;
+        }
+
+        public async Task OnGetAsync()
+        {
+            AllOffers = await _ramenikDBContext.SpecialOffers.OrderByDescending(offer => offer.IdSpecialOffer).ToListAsync();
+        }
+
+        /*public void OnGet()
         {
           using (var context = new RamenikDBContext())
             {
@@ -26,7 +40,7 @@ namespace RestaurantSystem.Pages
                             select offer.SpecialOfferName;
             }
 
-        }
+        }*/
 
         void refresh()
         {
