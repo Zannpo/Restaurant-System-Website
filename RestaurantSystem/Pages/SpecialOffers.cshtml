@@ -9,5 +9,26 @@
 
     <p>Nasze aktualne promocje: </p>
 </div>
-@Model.Id
+
+<div>
+    <table class="table table-custom table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Opis</th>               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var offer in Model.AllOffers)
+            {
+                <tr>
+                    <th scope="row">@offer.IdSpecialOffer</th>
+                    <td>@offer.SpecialOfferName</td>
+                    <td>@offer.SpecialOfferDescription</td>                 
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 

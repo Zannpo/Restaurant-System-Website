@@ -14,11 +14,8 @@ namespace RestaurantSystem.Pages
     public class SpecialOffersModel : PageModel
     {
         [BindProperty]
-        public SpecialOffer SpecialOffer { get; set; }
-
-        [BindProperty(SupportsGet = true)] //BindProperty makes it writable
-        public int Id { get; set; }
-
+        public SpecialOffer SpecialOffer { get; set; }             
+        
         public List<SpecialOffer> AllOffers = new List<SpecialOffer>();
 
         private readonly RamenikDBContext _ramenikDBContext;
@@ -29,7 +26,7 @@ namespace RestaurantSystem.Pages
 
         public async Task OnGetAsync()
         {
-            AllOffers = await _ramenikDBContext.SpecialOffers.OrderByDescending(offer => offer.IdSpecialOffer).ToListAsync();
+            AllOffers = await _ramenikDBContext.SpecialOffers.OrderBy(offer => offer.IdSpecialOffer).ToListAsync();
         }
 
         /*public void OnGet()
