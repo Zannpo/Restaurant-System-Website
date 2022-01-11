@@ -8,43 +8,38 @@
     <h1>@ViewData["Title"]</h1>
 
     <p>Nasze menu</p>
-    <div class="card-columns">
-        @foreach (var dish in Model.AllPositions)
-        {
-            <div class="card">                
-                <div class="card-img" style="background-image: url(@Url.Content(dish.CourseImage))" );>  
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <div class="card-body">
-                            @dish.CourseName
-                        </div>
-                    </div>                
-               </div>
-            </div>
-        }
+    <div>
+        <table class="table table-custom table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nazwa</th>
+                    <th scope="col">Składniki</th>
+                    <th scope="col">Cena</th>
+                    <th scope="col">Typ dania</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dish in Model.AllPositions)
+                {
+                    <tr>
+                        <th scope="row">@dish.IdCourse</th>
+                        <td>@dish.CourseName</td>
+                        <td>@dish.Ingredients</td>
+                        <td>@dish.CourseCost</td>
+                        <td>@dish.CourseType</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 
+<form action="Ramen">
+    <input type="submit" value="Nasze rameny" />
+</form>
 
+<form action="">
+    <input type="submit" value="Nasze przystawki" />
+</form>
 
-
-<div>
-    <table class="table table-custom table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nazwa</th>
-                <th scope="col">Cena</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var offer in Model.AllPositions)
-            {
-                <tr>
-                    <th scope="row">@offer.IdCourse</th>
-                    <td>@offer.CourseName</td>
-                    <td>@offer.CourseCost</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>

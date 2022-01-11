@@ -914,3 +914,5 @@ C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\bin\
 C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Appetizer.cshtml.g.cs
+C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Ramen.cshtml.g.cs
