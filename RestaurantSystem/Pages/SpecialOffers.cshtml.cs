@@ -13,14 +13,18 @@ namespace RestaurantSystem.Pages
     public class SpecialOffersModel : PageModel
     {
         [BindProperty]
-        public SpecialOfferModel SpecialOffer { get; set; }
+        public SpecialOffer SpecialOffer { get; set; }
 
         [BindProperty(SupportsGet = true)] //BindProperty makes it writable
         public int Id { get; set; }
 
         public void OnGet()
         {
-          
+          using (var context = new RamenikDBContext())
+            {
+                var query = from offer in context.SpecialOffers
+                            select offer.SpecialOfferName;
+            }
 
         }
 
@@ -40,7 +44,7 @@ namespace RestaurantSystem.Pages
                 {
                     while (reader.Read())
                     {
-                        SpecialOffer.specialOfferName = reader.GetString(0);
+                        //SpecialOffer.specialOfferName = reader.GetString(0);
                         
                     }                    
                 }

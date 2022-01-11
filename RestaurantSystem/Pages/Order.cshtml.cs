@@ -12,11 +12,11 @@ namespace RestaurantSystem.Pages
     public class OrderModel : PageModel
     {
         [BindProperty]
-        public OrderDetailsModel CustomersOrder { get; set; }
+        public OrderDetail CustomersOrder { get; set; }
         [BindProperty]
-        public MenuPositionModel MenuPosition { get; set; }
+        public MenuPosition MenuPosition { get; set; }
         [BindProperty(SupportsGet = true)]
-        public CustomerModel Customer { get; set; }
+        public Customer Customer { get; set; }
                 
         public String CustomerName;
 
@@ -26,7 +26,7 @@ namespace RestaurantSystem.Pages
         {
             
             //Displays the form
-            if (string.IsNullOrEmpty(Customer.name))
+            if (string.IsNullOrEmpty(Customer.Name))
             {
                 CustomerName = "";
                 Visible = false;
@@ -47,7 +47,7 @@ namespace RestaurantSystem.Pages
             }
             else
             {
-                CustomerName = Customer.name;
+                CustomerName = Customer.Name;
                 return Page();
                 //return RedirectToPage("./Index");
             }
