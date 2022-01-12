@@ -22,9 +22,25 @@ namespace RestaurantSystem.Pages
 
         public Boolean Visible = true;
 
+        public Boolean restaurantOpen = true;
+
+        public int currentTime = DateTime.Now.Hour;
+
+        public int openHour = 10;
+
+        public int closeHour = 21;
+
         public void OnGet()
         {
-            
+            if( currentTime >= openHour)
+            {
+                restaurantOpen = true;
+            }
+            else
+            {
+                restaurantOpen = false;
+            }
+
             //Displays the form
             if (string.IsNullOrEmpty(Customer.Name))
             {
