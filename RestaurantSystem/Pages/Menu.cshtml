@@ -7,7 +7,8 @@
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
 
-    <p>Nasze menu</p>
+    <p>Oferujemy <a asp-area="" asp-page="Ramen"><i>rameny</i></a> oraz różne <a asp-area="" asp-page="Appetizer"><i>przystawki</i></a></p>   
+    <p>Nasze aktualne menu:</p>
     <div>
         <table class="table table-custom table-striped">
             <thead>
@@ -35,11 +36,4 @@
     </div>
 </div>
 
-<form action="Ramen">
-    <input type="submit" value="Nasze rameny" />
-</form>
-
-<form action="">
-    <input type="submit" value="Nasze przystawki" />
-</form>
 

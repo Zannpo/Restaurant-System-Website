@@ -921,3 +921,5 @@ C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\
 C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Nowy\Details.cshtml.g.cs
 C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Nowy\Edit.cshtml.g.cs
 C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Nowy\Index.cshtml.g.cs
+C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\AcceptOrder.cshtml.g.cs
+C:\Users\Żaneta\Desktop\ramenik\Restaurant-System-Website\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Pages\EditOrder.cshtml.g.cs
