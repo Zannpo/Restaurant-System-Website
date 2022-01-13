@@ -21,12 +21,14 @@
             <br />
             <input type="text" asp-for="Customer.Address" placeholder="Adres dostawy" input-md" required="" /><br />
             <br />
-            <input type="text" asp-for="MenuPosition.CourseName" placeholder="Nazwa Dania" input-md" required="" /><br />
+            <input type="text" asp-for="CustomersOrderPosition.courseName" placeholder="Nazwa Dania" input-md" required="" /><br />
             <br />
             <input type="text" asp-for="Customer.Comment" placeholder="Uwagi" /><br />
             <br />
             <button type="submit">Złóż zamówienie</button>
-        </form>        
+        </form>
+
+        <select name="courseName" asp-items="Model.Courses"></select>
     }
 </div>
 

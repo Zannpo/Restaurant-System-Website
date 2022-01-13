@@ -1,4 +1,35 @@
-﻿@page
+﻿@page 
 @model RestaurantSystem.Pages.AcceptOrderModel
 @{
+    ViewData["Title"] = "Szczegóły twojego zamówienia";
 }
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>  
+    <form method="post">
+        <input type="text" asp-for="Customer.Name" placeholder="Imię" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="Customer.Surname" placeholder="Nazwisko" input-md" required="" /><br />
+        <br />
+        <input type="tel" asp-for="Customer.PhoneNumber" placeholder="Numer telefonu" input-md" required="" /><br />
+        <br />
+        <input type="email" asp-for="Customer.Email" placeholder="Adres email" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="Customer.Address" placeholder="Adres dostawy" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="MenuPosition.CourseName" placeholder="Nazwa Dania" input-md" required="" /><br />
+        <br />
+        <input type="text" asp-for="Customer.Comment" placeholder="Uwagi" /><br />
+        <br />
+        <input type="text" asp-for="CustomersOrder.DeliveryCost" placeholder="Koszt dostawy" /><br />
+        <br />
+        <input type="text" asp-for="CustomersOrder.TotalCost" placeholder="Koszt całkowity" /><br />
+        <br />
+        <input type="text" asp-for="CustomersOrder.OrderDate" placeholder="Data zamówienia" /><br />
+        <br />
+        <button type="submit">Potwierdź zamówienie</button>
+    </form>
+</div>
+
+<p> <b> Dziękujemy za zainteresowanie naszymi usługami <i> @Model.CustomerName </i></b> !</p>
+

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using RestaurantSystem.Models;
 
@@ -13,6 +14,10 @@ namespace RestaurantSystem.Pages
     {
         [BindProperty]
         public OrderDetail CustomersOrder { get; set; }
+
+        [BindProperty]
+        public OrderPosition CustomersOrderPosition { get; set; }
+
         [BindProperty]
         public MenuPosition MenuPosition { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -29,6 +34,11 @@ namespace RestaurantSystem.Pages
         public int openHour = 10;
 
         public int closeHour = 21;
+
+        RamenikDBContext context = new RamenikDBContext();
+        public SelectList Courses { get; set; }
+
+        public List<MenuPosition> AllPositions = new List<MenuPosition>();
 
         public void OnGet()
         {
@@ -53,6 +63,13 @@ namespace RestaurantSystem.Pages
                 // Nothing to do here
             }
 
+           
+           var dishes = from dish in context.MenuPositions
+                             select dish.CourseName;
+
+            Courses = new SelectList(dishes);
+            
+
         }
 
         public IActionResult OnPost()
@@ -63,16 +80,28 @@ namespace RestaurantSystem.Pages
             }
             else
             {
+                /*RamenikDBContext context = new RamenikDBContext();
+
                 CustomerName = Customer.Name;
-                return Page();
-                //return RedirectToPage("./Index");
+                //return Page();
+
+                context.OrderDetails.Add(CustomersOrder);
+                context.Customers.Add(Customer);
+                context.SaveChanges();
+                
+                return RedirectToPage("./Order/Index"); */
+                CustomerName = Customer.Name;
+                return RedirectToPage("AcceptOrder", new {CustomerName });
+
             }
         }
 
-       /* public void OnPost()
+       /*public async Task<IActionResult> OnPostAsync()
         {
-            //Capture the data from the form
-
+            RamenikDBContext context = new RamenikDBContext();
+            context.OrderDetails.Add(CustomersOrder);
+            await context.SaveChangesAsync();
+            return RedirectToPage("./Order/Index");
         } */
     }
 }

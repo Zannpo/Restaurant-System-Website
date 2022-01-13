@@ -171,6 +171,34 @@ namespace RestaurantSystem.Models
                     .IsFixedLength(true);
             });
 
+            modelBuilder.Entity<OrderPosition>(entity =>
+            {
+                entity.HasKey(e => e.idOrderPosition);
+
+                entity.ToTable("OrderPosition");
+
+                entity.Property(e => e.idOrderPosition)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("idOrderPosition");
+
+                entity.Property(e => e.IdOrder)
+                    .ValueGeneratedNever()
+                    .HasColumnName("IdOrder");
+
+                entity.Property(e => e.courseName)
+                    .HasMaxLength(20)
+                    .HasColumnName("courseName")
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.courseCost)
+                    .ValueGeneratedNever()
+                    .HasColumnName("courseCost");
+
+                entity.Property(e => e.courseQuantity)
+                    .ValueGeneratedNever()
+                    .HasColumnName("courseQuantity");
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 
