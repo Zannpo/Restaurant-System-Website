@@ -1,35 +1,86 @@
-﻿@page 
+﻿@page
+
 @model RestaurantSystem.Pages.AcceptOrderModel
 @{
     ViewData["Title"] = "Szczegóły twojego zamówienia";
 }
 
 <div class="text-center">
-    <h1>@ViewData["Title"]</h1>  
-    <form method="post">
-        <input type="text" asp-for="Customer.Name" placeholder="Imię" input-md" required="" /><br />
-        <br />
-        <input type="text" asp-for="Customer.Surname" placeholder="Nazwisko" input-md" required="" /><br />
-        <br />
-        <input type="tel" asp-for="Customer.PhoneNumber" placeholder="Numer telefonu" input-md" required="" /><br />
-        <br />
-        <input type="email" asp-for="Customer.Email" placeholder="Adres email" input-md" required="" /><br />
-        <br />
-        <input type="text" asp-for="Customer.Address" placeholder="Adres dostawy" input-md" required="" /><br />
-        <br />
-        <input type="text" asp-for="MenuPosition.CourseName" placeholder="Nazwa Dania" input-md" required="" /><br />
-        <br />
-        <input type="text" asp-for="Customer.Comment" placeholder="Uwagi" /><br />
-        <br />
-        <input type="text" asp-for="CustomersOrder.DeliveryCost" placeholder="Koszt dostawy" /><br />
-        <br />
-        <input type="text" asp-for="CustomersOrder.TotalCost" placeholder="Koszt całkowity" /><br />
-        <br />
-        <input type="text" asp-for="CustomersOrder.OrderDate" placeholder="Data zamówienia" /><br />
-        <br />
-        <button type="submit">Potwierdź zamówienie</button>
-    </form>
+    <h1>@ViewData["Title"]</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.IdOrder)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Comment)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CustomerData)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdOrder)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.CustomerPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.CustomerSurname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.CustomerEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.CustomerAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                    <td>
+                        <form method="post">
+                            <button type="submit">Złóż zamówienie</button>
+                        </form>
+                        <form action="Index">
+                            <button type="submit">Anuluj</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
+@if (ViewData["Message"] != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewData["Message"]");
+            };
+    </script>
+}
 
 <p> <b> Dziękujemy za zainteresowanie naszymi usługami <i> @Model.CustomerName </i></b> !</p>
 

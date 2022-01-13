@@ -23,7 +23,7 @@ namespace RestaurantSystem.Pages
         [BindProperty(SupportsGet = true)]
         public Customer Customer { get; set; }
                 
-        public String CustomerName;
+        public String CustomerName, CustomerSurname,CustomerAddress, CustomerEmail, CustomerPhone;
 
         public Boolean Visible = true;
 
@@ -91,7 +91,11 @@ namespace RestaurantSystem.Pages
                 
                 return RedirectToPage("./Order/Index"); */
                 CustomerName = Customer.Name;
-                return RedirectToPage("AcceptOrder", new {CustomerName });
+                CustomerSurname = Customer.Surname;
+                CustomerEmail = Customer.Email;
+                CustomerAddress = Customer.Address;
+                CustomerPhone = Customer.PhoneNumber;
+                return RedirectToPage("AcceptOrder", new {CustomerName, CustomerSurname, CustomerAddress, CustomerEmail, CustomerPhone });
 
             }
         }
